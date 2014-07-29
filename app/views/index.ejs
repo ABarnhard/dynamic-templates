@@ -20,8 +20,9 @@
       <% } %>
 
       <% var colors = ['blue', 'green', 'yellow', 'orange', 'pink', 'red', 'purple'] %>
+      <% var fonts = ['Uncial Antiqua, cursive', 'Roboto, sans-serif', 'Frijole, cursive'] %>
       <% for(var i = 0; i < colors.length; i++){ %>
-      <p style="color:<%= colors[i] %>;font-size:<%= 12 + (i * 2) %>px;background-color:<%= ((i + 1) < colors.length) ? colors[i + 1] : colors[0] %>;"><%= colors[i] %></p>
+      <p style="font-family:<%= fonts[i % 3] %>;color:<%= colors[i] %>;font-size:<%= 12 + (i * 2) %>px;background-color:<%= ((i + 1) < colors.length) ? colors[i + 1] : colors[0] %>;"><%= colors[i] %></p>
       <% } %>
     </div>
   </body>
