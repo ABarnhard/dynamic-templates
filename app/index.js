@@ -15,6 +15,10 @@ app.get('/', function(req, res){
   res.render('index.ejs');
 });
 
+app.get('/checkers', function(req, res){
+  res.render('checkers.ejs');
+});
+
 var port = process.env.PORT;
 
 app.listen(port, function(){
