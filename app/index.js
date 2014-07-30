@@ -19,6 +19,24 @@ app.get('/checkers', function(req, res){
   res.render('checkers.ejs');
 });
 
+app.get('/add/:x/:y', function(req, res){
+  req.params.x *= 1;
+  req.params.y *= 1;
+  req.params.length = 2;
+  req.params.isOdd = ((req.params.x + req.params.y) % 2) === 1;
+  res.render('add.ejs', req.params);
+});
+
+app.get('/add/:x/:y/:a/:b', function(req, res){
+  req.params.x *= 1;
+  req.params.y *= 1;
+  req.params.a *= 1;
+  req.params.b *= 1;
+  req.params.length = 4;
+  req.params.isOdd = ((req.params.x + req.params.y + req.params.a + req.params.b) % 2) === 1;
+  res.render('add.ejs', req.params);
+});
+
 var port = process.env.PORT;
 
 app.listen(port, function(){
