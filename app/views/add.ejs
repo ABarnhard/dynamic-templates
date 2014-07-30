@@ -9,11 +9,10 @@
     <h1>Sum</h1>
     <% var c = isOdd ? 'red' : 'green' %>
     <% if(length === 2) { %>
-      <h2><%= x %> + <%= y %> = <span style="color:<%= c %>;"><%= x + y %></span></h2>
+    <h2 style="font-size:<%= fontSize %>;border:<%=bw%>px solid <%=color%>;"><%= x %> + <%= y %> = <span style="color:<%= c %>;"><%= x + y %></span></h2>
     <% }else{ %>
-      <h2><%= x %> + <%= y %> + <%= a %> + <%= b %> = <span style="color:<%= c %>;"><%= x + y + a + b %></span></h2>
+    <h2 style="font-size:<%= fontSize %>;border: <%= bw %>px solid <%= color %>;"><%= x %> + <%= y %> + <%= a %> + <%= b %> = <span style="color:<%= c %>;"><%= x + y + a + b %></span></h2>
     <% } %>
-  </div>
   </body>
 </html>
 

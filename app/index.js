@@ -24,16 +24,21 @@ app.get('/add/:x/:y', function(req, res){
   req.params.y *= 1;
   req.params.length = 2;
   req.params.isOdd = ((req.params.x + req.params.y) % 2) === 1;
+  req.params.fontSize = req.query.fontsize;
   res.render('add.ejs', req.params);
 });
 
 app.get('/add/:x/:y/:a/:b', function(req, res){
+  console.log(req.params, req.query);
   req.params.x *= 1;
   req.params.y *= 1;
   req.params.a *= 1;
   req.params.b *= 1;
   req.params.length = 4;
   req.params.isOdd = ((req.params.x + req.params.y + req.params.a + req.params.b) % 2) === 1;
+  req.params.fontSize = req.query.fontsize;
+  req.params.color = req.query.color;
+  req.params.bw = req.query.borderwidth;
   res.render('add.ejs', req.params);
 });
 
