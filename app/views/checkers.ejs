@@ -12,11 +12,6 @@
         <% for(var i = 1; i < 9; i++) { %>
           <tr class="tr<%= i % 2 %>">
             <% for(var j = 1; j < 9; j++) { %>
-              <% if(i%2===1){ %>
-                <% bg = (j%2===1) ? 'white' : 'black' %>
-              <% }else{ %>
-                <% bg = (j%2===1) ? 'black' : 'white' %>
-              <% } %>
               <td class="td<%= j%2 %>"></td>
             <% } %>
           </tr>
