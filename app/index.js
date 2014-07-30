@@ -12,11 +12,11 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/static'));
 
 app.get('/', function(req, res){
-  res.render('index.ejs');
+  res.render('index');
 });
 
 app.get('/checkers', function(req, res){
-  res.render('checkers.ejs');
+  res.render('checkers');
 });
 
 app.get('/add/:x/:y', function(req, res){
@@ -25,11 +25,10 @@ app.get('/add/:x/:y', function(req, res){
   req.params.length = 2;
   req.params.isOdd = ((req.params.x + req.params.y) % 2) === 1;
   req.params.fontSize = req.query.fontsize;
-  res.render('add.ejs', req.params);
+  res.render('add', req.params);
 });
 
 app.get('/add/:x/:y/:a/:b', function(req, res){
-  console.log(req.params, req.query);
   req.params.x *= 1;
   req.params.y *= 1;
   req.params.a *= 1;
@@ -39,7 +38,15 @@ app.get('/add/:x/:y/:a/:b', function(req, res){
   req.params.fontSize = req.query.fontsize;
   req.params.color = req.query.color;
   req.params.bw = req.query.borderwidth;
-  res.render('add.ejs', req.params);
+  res.render('add', req.params);
+});
+
+app.get('/sumlist/:nums', function(req, res){
+  req.params.nums = req.params.nums.split(',').map(function(x){return x * 1;});
+  req.params.even = req.query.even;
+  req.params.odd = req.query.odd;
+  req.params.sum = req.params.nums.reduce(function(a, b){return a + b;});
+  res.render('sumlist', req.params);
 });
 
 var port = process.env.PORT;

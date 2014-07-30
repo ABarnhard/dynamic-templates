@@ -1,0 +1,14 @@
+tr:nth-child(odd){
+  background-color: whitesmoke;
+}
+
+table{
+  border: 5px solid black;
+}
+
+td{
+  font-size: 20px;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
