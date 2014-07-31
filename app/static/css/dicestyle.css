@@ -1,3 +1,9 @@
+body {
+  position: relative;
+  width: auto;
+  margin: auto 0;
+}
+
 table td{
   height: 64px;
   width: 64px;
