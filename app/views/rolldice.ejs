@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Roll Dice Motherf@#ker</title>
+    <link rel="stylesheet" type="text/css" href="/css/dicestyle.css">
+  </head>
+  <body>
+    <div>
+      <table>
+        <tbody>
+          <% for(var i = 0; i <= row; i++) { %>
+            <tr>
+              <% var len = rolls.length < 10 ? rolls.length : 10 %>
+              <% for(var j = 0; j < len; j++) { %>
+                <td class="r<%=rolls.splice(0,1)[0]%>"></td>
+              <% } %>
+            </tr>
+          <% } %>
+          <tr>
+            <td colspan="10">Sum: <span><%=sum %></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
